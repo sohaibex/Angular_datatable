@@ -8,11 +8,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactiveFormComponent implements OnInit {
 
-  constructor() { }
   LoginForm = new FormGroup({
     email: new FormControl(null, Validators.required),
-    password: new FormControl([null, Validators.required, Validators.minLength(3)])
+    password: new FormControl(null, [Validators.required, Validators.minLength(8)])
   })
+  add() {
+
+  }
+  constructor() { }
 
   ngOnInit(): void {
   }

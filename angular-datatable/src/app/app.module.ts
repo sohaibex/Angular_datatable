@@ -7,7 +7,10 @@ import { WizzardComponent } from './components/wizzard/wizzard/wizzard.component
 import { DrivenFormComponent } from './components/Froms/driven-form/driven-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DatatableComponent } from './components/datatable/datatable.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormModalComponent } from './components/Froms/form-modal/form-modal.component';
+
 
 
 
@@ -17,12 +20,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormComponent,
     WizzardComponent,
     DrivenFormComponent,
-    DatatableComponent
+    DatatableComponent,
+    FormModalComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     DataTablesModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],
