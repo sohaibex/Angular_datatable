@@ -12,6 +12,10 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 export class AppComponent implements OnInit {
   constructor() { }
 
+  count = 0;
+  increase() { }
+  decrease() { }
+
 
   ngOnInit(): void { }
 

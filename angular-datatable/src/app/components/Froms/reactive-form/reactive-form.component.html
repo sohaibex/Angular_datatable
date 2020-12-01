@@ -14,8 +14,9 @@
         <input formControlName="email" type="email" class="form-control" id="email"
           ng-class="{'is-invalid':LoginForm.email.$error.required && LoginForm.email.$touched}"
           placeholder="Enter email">
-        <small ng-show="LoginForm.email.$error.required && LoginForm.email.$touched" id="emailHelp"
-          class="form-text text-danger">email is required.</small>
+        <small *ngIf="LoginForm.get('email').getError('required')" class="text-danger">
+          Email is Required
+        </small>
 
       </div>
       <div class="form-group">
@@ -24,12 +25,12 @@
 
         <div
           *ngIf="LoginForm.get('password').invalid && (LoginForm.get('password').touched) || LoginForm.get('password').dirty">
-          <span *ngIf="LoginForm.get('password').hasError('minlength')" class="alert alert-danger">
+          <small *ngIf="LoginForm.get('password').hasError('minlength')" class="text-danger">
             Min Password 8
-          </span>
-          <div *ngIf="LoginForm.get('password').getError('required')" class="alert alert-danger">
-            Password Required
-          </div>
+          </small>
+          <small *ngIf="LoginForm.get('password').getError('required')" class="text-danger">
+            Password is Required
+          </small>
 
         </div>
 
