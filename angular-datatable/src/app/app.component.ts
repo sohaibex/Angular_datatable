@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 declare var $: any;
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -10,11 +11,17 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor() { }
+  count: number = 0;
+  constructor(private store: Store<any>) {
+    this.store.subscribe(data => this.count = data.counter.n);
+  }
 
-  count = 0;
-  increase() { }
-  decrease() { }
+
+  increase() { this.store.dispatch({ type: 'increament' }) }
+
+  decrease() {
+    this.store.dispatch({ type: 'decreament' })
+  }
 
 
   ngOnInit(): void { }

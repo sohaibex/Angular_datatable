@@ -33,7 +33,7 @@ import { counterReducer } from './components/store/store';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
+    StoreModule.forRoot({ counter: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
