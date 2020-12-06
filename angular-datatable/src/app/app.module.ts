@@ -13,6 +13,10 @@ import { ReactiveFormComponent } from './components/Froms/reactive-form/reactive
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './components/store/store';
 
+import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsAPIWrapper, AgmCoreModule } from '@agm/core';
+
+
 
 
 
@@ -32,8 +36,12 @@ import { counterReducer } from './components/store/store';
     DataTablesModule,
     AppRoutingModule,
     FormsModule,
+    GoogleMapsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ counter: counterReducer })
+    StoreModule.forRoot({ counter: counterReducer }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBWxDX-KlmuFfvCvkc92MJoFrjR17FOpDM'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

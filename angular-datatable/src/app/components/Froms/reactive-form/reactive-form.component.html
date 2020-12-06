@@ -61,6 +61,9 @@
           </button>
         </div>
         <div class="modal-body">
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
           Votre Position est : Lattitude: {{lat}} longitude est :{{lng}}
         </div>
 

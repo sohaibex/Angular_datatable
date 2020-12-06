@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { google } from '@google/maps';
 declare var $: any;
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { GoogleMapsAPIWrapper } from '@agm/core';
 
 
 @Component({

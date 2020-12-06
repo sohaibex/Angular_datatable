@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { google } from '@google/maps';
+import { GoogleMapsAPIWrapper } from '@agm/core';
 
 @Component({
   selector: 'reactive-form',
