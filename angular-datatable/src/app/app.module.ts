@@ -7,7 +7,7 @@ import { DrivenFormComponent } from './components/Froms/driven-form/driven-form.
 import { AppRoutingModule } from './app-routing.module';
 import { DatatableComponent } from './components/datatable/datatable.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormModalComponent } from './components/Froms/form-modal/form-modal.component';
 import { ReactiveFormComponent } from './components/Froms/reactive-form/reactive-form.component';
 import { StoreModule } from '@ngrx/store';
@@ -15,6 +15,18 @@ import { counterReducer } from './components/store/store';
 
 import { GoogleMapsModule } from '@angular/google-maps'
 import { GoogleMapsAPIWrapper, AgmCoreModule } from '@agm/core';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable/lib/ngx-datatable.module';
+import { IconsProviderModule } from './icons-provider.module';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { fr_FR } from 'ng-zorro-antd/i18n';
+import fr from '@angular/common/locales/fr';
+
+registerLocaleData(fr);
+
 
 
 
@@ -42,8 +54,15 @@ import { GoogleMapsAPIWrapper, AgmCoreModule } from '@agm/core';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBWxDX-KlmuFfvCvkc92MJoFrjR17FOpDM'
     }),
+    IconsProviderModule,
+    NzLayoutModule,
+    NzMenuModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+
+
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: fr_FR }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,10 +1,14 @@
+import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+
+
 declare var $: any;
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { ViewEncapsulation } from '@angular/compiler/src/core';
 
 @Component({
-  selector: 'app-datatable',
+  selector: 'datatable',
   templateUrl: './datatable.component.html',
   styleUrls: ['./datatable.component.css']
 })
@@ -15,32 +19,47 @@ export class DatatableComponent implements OnInit {
   dtOptions: any = {};
 
   ngOnInit(): void {
+    // this.dtOptions = {
+    //   // responsive: true,
+    //   pagingType: 'full_numbers',
+
+    //   // Declare the use of the extension in the dom parameter
+    //   dom: 'Bfrtip',
+    //   // Configure the buttons
+    //   buttons: [
+    //     'pdf',
+    //     'copy',
+    //     'print',
+    //     'excel',
+    //     {
+    //       text: 'Some button',
+    //       key: '1',
+    //       action: function (e, dt, node, config) {
+    //         alert('Button activated');
+    //       }
+    //     }
+    //   ],
+    //   responsive: true,
+
+    // };
+
+
     this.dtOptions = {
-      // responsive: true,
-      pagingType: 'full_numbers',
-      select: true,
-      // Declare the use of the extension in the dom parameter
-      dom: 'Bfrtip',
-      // Configure the buttons
-      buttons: [
-        'pdf',
-        'copy',
-        'print',
-        'excel',
-        {
-          text: 'Some button',
-          key: '1',
-          action: function (e, dt, node, config) {
-            alert('Button activated');
-          }
-        }
-      ]
-
-
+      ajax: 'data.json',
+      columns: [{
+        title: 'ID',
+        data: 'id'
+      }, {
+        title: 'First name',
+        data: 'firstName'
+      }, {
+        title: 'Last name',
+        data: 'lastName',
+        class: 'none'
+      }],
+      // Use this attribute to enable the responsive extension
+      responsive: true
     };
-
-
-
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 
@@ -67,5 +86,9 @@ export class DatatableComponent implements OnInit {
 
 
   }
+
+
+
+
 
 }
