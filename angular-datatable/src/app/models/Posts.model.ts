@@ -1,7 +1,12 @@
 export interface PostModel {
-    userId: number;
+    postId: number;
     id: number;
     name?: string;
-    title: string;
+    email: string;
     body: string;
+    expand: boolean;
+
+
+
+
 }
