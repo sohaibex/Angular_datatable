@@ -27,6 +27,9 @@ import { fr_FR } from 'ng-zorro-antd/i18n';
 import fr from '@angular/common/locales/fr';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 registerLocaleData(fr);
 
 
@@ -63,6 +66,9 @@ registerLocaleData(fr);
     HttpClientModule,
     BrowserAnimationsModule,
     NzTableModule,
+    NgbModule,
+    NzModalModule,
+    NzFormModule
 
 
 

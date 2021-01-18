@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   { path: 'Forms', component: ReactiveFormComponent },
-  { path: 'anttable', component: WizzardComponent },
+  { path: 'smartable', component: WizzardComponent },
   { path: 'Display', component: DatatableComponent },
   { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
 ];
