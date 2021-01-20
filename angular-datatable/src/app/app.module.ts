@@ -1,3 +1,4 @@
+
 import { PostsService } from './services/posts.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -32,6 +33,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
+
 registerLocaleData(fr);
 
 
@@ -72,7 +74,8 @@ registerLocaleData(fr);
     NzModalModule,
     NzFormModule,
     NzBadgeModule,
-    NzTypographyModule
+    NzTypographyModule,
+
 
 
 

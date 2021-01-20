@@ -1,8 +1,8 @@
 
  
-    <nz-badge nzStatus="success" nzText="Acive"> </nz-badge>
+    <nz-badge nzStatus="success" nzText="Active"> </nz-badge>
    
-   
+    
 
 <button nz-button  nzType="primary"   nzValue="large">Add</button>
 <nz-table #nzTable [nzData]="posts" nzTableLayout="fixed">
@@ -10,6 +10,7 @@
       <tr>
         <th nzWidth="60px"></th>
         <th>Actions</th>
+        <th>Livreur Actions</th>
         <th>Id</th>
         <th>Nom</th>
         <th>Titre</th>
@@ -25,8 +26,20 @@
           <a style="padding-left: 7px;" type="button" (click)="showModal()"><i nz-icon nzType="delete" [nzTheme]="'twotone'" [nzTwotoneColor]="'red'"></i></a> 
              
         </td>
+        <td>
+         
+          <a  type="button" (click)="showModal()"><i nz-icon nzType="check-square" nzTheme="outline"></i></a> 
+          <a  type="button" (click)="showModal()"><i nz-icon nzType="calendar" nzTheme="outline"></i></a> 
+          <a  type="button" (click)="showModal()"><i nz-icon nzType="rollback" nzTheme="outline"></i></a> 
+          <i class="fa fa-facebook" ></i>
+          <i class="fa fa-phone"></i>
+          <i class="fas fa-phone-slash"></i>
+          <a  type="button" (click)="showModal()"><i class="fa fa-phone-slash"></i></a> 
+    
+        
+        </td>
           <td>{{ data.id }}</td>
-          <td nz-typography nzType="success" >{{ data.name }}</td>
+          <td  >{{ data.name }}</td>
           <td>{{ data.email }}</td>
         </tr>
         <tr [nzExpand]="expandSet.has(data.id)">
