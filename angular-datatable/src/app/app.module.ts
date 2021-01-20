@@ -16,7 +16,7 @@ import { counterReducer } from './components/store/store';
 
 import { GoogleMapsModule } from '@angular/google-maps'
 import { GoogleMapsAPIWrapper, AgmCoreModule } from '@agm/core';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable/lib/ngx-datatable.module';
+
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -30,6 +30,8 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 registerLocaleData(fr);
 
 
@@ -68,7 +70,9 @@ registerLocaleData(fr);
     NzTableModule,
     NgbModule,
     NzModalModule,
-    NzFormModule
+    NzFormModule,
+    NzBadgeModule,
+    NzTypographyModule
 
 
 

@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl, ValidationErrors, Validators } fro
 import { NgbModal, ModalDismissReasons, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NzButtonSize } from 'ng-zorro-antd/button/button.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { id } from 'projects/swimlane/ngx-datatable/src/public-api';
+
 import { Observable, Observer } from 'rxjs';
 import { PostModel } from 'src/app/models/Posts.model';
 import { PostsService } from 'src/app/services/posts.service';

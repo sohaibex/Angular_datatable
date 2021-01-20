@@ -26,7 +26,6 @@
     "@ngrx/store": "^10.1.0",
     "@ngrx/store-devtools": "^10.1.0",
     "@swimlane/ngx-charts": "^16.0.0",
-    "@swimlane/ngx-datatable": "^18.0.0",
     "@types/googlemaps": "^3.40.3",
     "angular-datatables": "^10.0.0",
     "bootstrap": "^4.5.3",
