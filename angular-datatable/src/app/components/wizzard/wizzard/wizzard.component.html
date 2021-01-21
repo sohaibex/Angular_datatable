@@ -9,41 +9,43 @@
     <thead>
       <tr>
         <th nzWidth="60px"></th>
+     
         <th>Actions</th>
-        <th>Livreur Actions</th>
         <th>Id</th>
         <th>Nom</th>
+        <th>Statut</th>
         <th>Titre</th>
       </tr>
     </thead>
     <tbody>
       <ng-container *ngFor="let data of nzTable.data">
-        <tr>     
+         <tr>     
           <td [nzExpand]="expandSet.has(data.id)" (nzExpandChange)="onExpandChange(data.id, $event)"></td>
-          <td>
+        <!--  <td>
             
           <a  type="button" (click)="showModal()"><i nz-icon nzType="edit" [nzTheme]="'twotone'"  [nzTwotoneColor]="'#FFD65E'" nzTheme="outline"></i></a> 
           <a style="padding-left: 7px;" type="button" (click)="showModal()"><i nz-icon nzType="delete" [nzTheme]="'twotone'" [nzTwotoneColor]="'red'"></i></a> 
              
-        </td>
+        </td> -->
         <td>
          
-          <a  type="button" (click)="showModal()"><i nz-icon nzType="check-square" nzTheme="outline"></i></a> 
-          <a  type="button" (click)="showModal()"><i nz-icon nzType="calendar" nzTheme="outline"></i></a> 
-          <a  type="button" (click)="showModal()"><i nz-icon nzType="rollback" nzTheme="outline"></i></a> 
-          <i class="fa fa-facebook" ></i>
-          <i class="fa fa-phone"></i>
-          <i class="fas fa-phone-slash"></i>
-          <a  type="button" (click)="showModal()"><i class="fa fa-phone-slash"></i></a> 
+          <a  type="button"  (click)="showModal()"><i nzTooltipTitle="Livraison" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-check-square"></i></a> 
+          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Reporter" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-calendar-alt"></i></a> 
+          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Revenir" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-undo-alt"></i></a> 
+          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Pas de Reponse" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-phone-slash"></i></a> 
+          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Hors de portée" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-map-marked-alt"></i></a> 
+          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Refuser" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-times"></i></a> 
     
         
         </td>
           <td>{{ data.id }}</td>
           <td  >{{ data.name }}</td>
+          <td><span class="badge badge-success">Livré</span></td>
           <td>{{ data.email }}</td>
         </tr>
         <tr [nzExpand]="expandSet.has(data.id)">
           <span>{{ data.body }}</span>
+<ul data-dtr-index="0" class="dtr-details"><li data-dtr-index="8" data-dt-row="0" data-dt-column="8"><span class="dtr-title">Ville client</span> <span class="dtr-data">Fes</span></li><li data-dtr-index="9" data-dt-row="0" data-dt-column="9"><span class="dtr-title">Nom du produit</span> <span class="dtr-data">ganziza</span></li><li data-dtr-index="10" data-dt-row="0" data-dt-column="10"><span class="dtr-title">Prix total</span> <span class="dtr-data">349 MAD</span></li><li data-dtr-index="11" data-dt-row="0" data-dt-column="11"><span class="dtr-title">Quantité</span> <span class="dtr-data">1</span></li><li data-dtr-index="12" data-dt-row="0" data-dt-column="12"><span class="dtr-title">Adresse du client</span> <span class="dtr-data">132 lot bennis av ibn atir fes</span></li><li data-dtr-index="16" data-dt-row="0" data-dt-column="16"><span class="dtr-title">Email</span> <span class="dtr-data">_</span></li><li data-dtr-index="18" data-dt-row="0" data-dt-column="18"><span class="dtr-title">Livreur note</span> <span class="dtr-data">_</span></li><li data-dtr-index="19" data-dt-row="0" data-dt-column="19"><span class="dtr-title">Frais de livraison</span> <span class="dtr-data">20 MAD</span></li><li data-dtr-index="21" data-dt-row="0" data-dt-column="21"><span class="dtr-title">Responsable</span> <span class="dtr-data"><a data-toggle="tooltip" title="" href="tel:0662656745" data-original-title="Mr. Admin">0662656745</a></span></li><li data-dtr-index="22" data-dt-row="0" data-dt-column="22"><span class="dtr-title">Date d'action</span> <span class="dtr-data">01/15/2021 23:13:06</span></li><li data-dtr-index="23" data-dt-row="0" data-dt-column="23"><span class="dtr-title">Date reportée</span> <span class="dtr-data">_</span></li><li data-dtr-index="25" data-dt-row="0" data-dt-column="25"><span class="dtr-title">Remarques</span> <span class="dtr-data">_</span></li><li data-dtr-index="27" data-dt-row="0" data-dt-column="27"><span class="dtr-title">Code de suivi</span> <span class="dtr-data"><a href="_" target="_blank">_</a></span></li><li data-dtr-index="28" data-dt-row="0" data-dt-column="28"><span class="dtr-title">Date de création</span> <span class="dtr-data">01/13/2021 16:47:27</span></li><li data-dtr-index="29" data-dt-row="0" data-dt-column="29"><span class="dtr-title">Date mise à jour</span> <span class="dtr-data">01/15/2021 23:13:06</span></li></ul>
         </tr>
       </ng-container>
     </tbody>
@@ -115,6 +117,18 @@
       </form>
     </ng-container>
   </nz-modal> 
+
+
+  <nz-modal [(nzVisible)]="isVisible" nzTitle="Livré Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+      <form nz-form [formGroup]="livre" (ngSubmit)="submitForm(validateForm.value)">
+      
+        <input type="date" name="date" class="form-control" id="">
+        
+      </form>
+    </ng-container>
+  </nz-modal> 
+
 
 
 

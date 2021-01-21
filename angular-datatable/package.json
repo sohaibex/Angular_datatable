@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~11.0.1",
     "@angular/router": "~11.0.1",
     "@fortawesome/angular-fontawesome": "^0.8.1",
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
@@ -54,7 +55,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.2",
-    "@angular/cli": "~11.0.2",
+    "@angular/cli": "^11.1.0",
     "@angular/compiler-cli": "~11.0.1",
     "@types/datatables.net": "^1.10.19",
     "@types/datatables.net-buttons": "^1.4.3",

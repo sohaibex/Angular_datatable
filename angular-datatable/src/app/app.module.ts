@@ -33,6 +33,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 registerLocaleData(fr);
 
@@ -75,6 +76,7 @@ registerLocaleData(fr);
     NzFormModule,
     NzBadgeModule,
     NzTypographyModule,
+    NzToolTipModule
 
 
 
