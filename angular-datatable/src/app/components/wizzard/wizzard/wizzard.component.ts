@@ -87,6 +87,8 @@ export class WizzardComponent implements OnInit {
     this.isVisible = true;
   }
 
+  rechercher() { }
+
   handleOk(): void {
     console.log('Button ok clicked!');
     this.isVisible = false;
