@@ -21,6 +21,7 @@ export class WizzardComponent implements OnInit {
   size: NzButtonSize = 'large';
   posts: PostModel[];
   isVisible = false;
+  isVisiblelivre = false;
 
 
   validateForm: FormGroup;
@@ -86,17 +87,22 @@ export class WizzardComponent implements OnInit {
   showModal(): void {
     this.isVisible = true;
   }
+  showModallivre(): void {
+    this.isVisiblelivre = true;
+  }
 
   rechercher() { }
 
   handleOk(): void {
     console.log('Button ok clicked!');
     this.isVisible = false;
+    this.isVisiblelivre = false;
   }
 
   handleCancel(): void {
     console.log('Button cancel clicked!');
     this.isVisible = false;
+    this.isVisiblelivre = false;
   }
 
   expandSet = new Set<number>();

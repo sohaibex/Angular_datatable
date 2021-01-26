@@ -29,7 +29,7 @@
         </td> -->
         <td>
          
-          <a  type="button"  (click)="showModal()"><i nzTooltipTitle="Livraison" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-check-square"></i></a> 
+          <a  type="button"  (click)="showModallivre()"><i nzTooltipTitle="Livraison" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-check-square"></i></a> 
           <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Reporter" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-calendar-alt"></i></a> 
           <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Revenir" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-undo-alt"></i></a> 
           <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Pas de Reponse" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-phone-slash"></i></a> 
@@ -119,9 +119,9 @@
   </nz-modal> 
 
 
-  <nz-modal [(nzVisible)]="isVisible" nzTitle="Livré Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <nz-modal [(nzVisible)]="isVisiblelivre" nzTitle="Livré Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
     <ng-container *nzModalContent>
-      <form nz-form [formGroup]="livre" (ngSubmit)="submitForm(validateForm.value)">
+      <form nz-form [formGroup]="livre" (ngSubmit)="submitForm(livreForm.value)">
       
         <input type="date" name="date" class="form-control" id="">
         
