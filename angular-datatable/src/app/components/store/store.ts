@@ -5,7 +5,7 @@ let initialState =
     n: 0
 }
 
-export function counterReducer(state = initialState, action: Action) {
+export function PostesReducer(state = initialState, action: Action) {
     switch (action.type) {
         case 'increament':
             return {

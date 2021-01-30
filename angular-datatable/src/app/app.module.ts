@@ -13,7 +13,7 @@ import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormModalComponent } from './components/Froms/form-modal/form-modal.component';
 import { ReactiveFormComponent } from './components/Froms/reactive-form/reactive-form.component';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './components/store/store';
+// import { counterReducer, PostesReducer } from './components/store/store';
 
 import { GoogleMapsModule } from '@angular/google-maps'
 import { GoogleMapsAPIWrapper, AgmCoreModule } from '@agm/core';
@@ -34,6 +34,9 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { PostesReducer } from './components/store/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 registerLocaleData(fr);
 
@@ -61,7 +64,12 @@ registerLocaleData(fr);
     FormsModule,
     GoogleMapsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ counter: counterReducer }),
+    StoreModule.forRoot({ post: PostesReducer }),
+    // Instrumentation must be imported after importing StoreModule (config is optional)
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBWxDX-KlmuFfvCvkc92MJoFrjR17FOpDM'
     }),

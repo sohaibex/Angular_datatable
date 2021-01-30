@@ -81,6 +81,7 @@ export class WizzardComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     this.getPosts();
     console.log("hadi" + this.posts)
   }
