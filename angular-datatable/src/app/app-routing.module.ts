@@ -1,8 +1,9 @@
 import { WizzardComponent } from './components/wizzard/wizzard/wizzard.component';
-import { DatatableComponent } from './components/datatable/datatable.component';
+
 import { ReactiveFormComponent } from './components/Froms/reactive-form/reactive-form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DatatableComponent } from './components/Posts/datatable/datatable.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },

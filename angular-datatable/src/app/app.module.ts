@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { WizzardComponent } from './components/wizzard/wizzard/wizzard.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { DatatableComponent } from './components/datatable/datatable.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormModalComponent } from './components/Froms/form-modal/form-modal.component';
@@ -37,6 +37,9 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { PostesReducer } from './components/store/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { DatatableComponent } from './components/Posts/datatable/datatable.component';
+import { AddpostComponent } from './components/Posts/addpost/addpost.component';
+import { UpdatepostComponent } from './components/Posts/updatepost/updatepost.component';
 
 registerLocaleData(fr);
 
@@ -51,7 +54,9 @@ registerLocaleData(fr);
     ReactiveFormComponent,
     WizzardComponent,
     DatatableComponent,
-    FormModalComponent
+    FormModalComponent,
+    AddpostComponent,
+    UpdatepostComponent
 
   ],
   imports: [
