@@ -26,7 +26,14 @@ export class WizzardComponent implements OnInit {
 
   validateForm: FormGroup;
 
-  submitForm(value: { userName: string; email: string; password: string; confirm: string; comment: string }): void {
+  submitForm(value:
+    {
+      userName: string;
+      email: string;
+      password: string;
+      confirm: string;
+      comment: string
+    }): void {
     for (const key in this.validateForm.controls) {
       this.validateForm.controls[key].markAsDirty();
       this.validateForm.controls[key].updateValueAndValidity();
@@ -88,7 +95,7 @@ export class WizzardComponent implements OnInit {
   showModal(): void {
     this.isVisible = true;
   }
-  showModallivre(): void {
+  showModalLivre(): void {
     this.isVisiblelivre = true;
   }
 
@@ -108,11 +115,7 @@ export class WizzardComponent implements OnInit {
 
   expandSet = new Set<number>();
   onExpandChange(id: number, checked: boolean): void {
-    if (checked) {
-      this.expandSet.add(id);
-    } else {
-      this.expandSet.delete(id);
-    }
+    checked ? this.expandSet.add(id) : this.expandSet.delete(id);
   }
   getPosts() {
     this.postsService.getPosts().subscribe((data: any[]) => {

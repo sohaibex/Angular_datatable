@@ -1,26 +1,35 @@
+<nz-badge nzStatus="success" nzText="Active"> </nz-badge>
 
- 
-    <nz-badge nzStatus="success" nzText="Active"> </nz-badge>
-   
-    
+<button nz-button nzType="primary" nzValue="large">Add</button>
+<nz-table
+  #nzTable
+  [nzShowQuickJumper]="true"
+  [nzShowSizeChanger]="true"
+  [nzItemRender]
+  [nzBordered]="true"
+  [nzScroll]
+  [nzFrontPagination]="true"
+  [nzData]="posts"
+  nzTableLayout="fixed"
+>
+  <thead>
+    <tr>
+      <th nzWidth="60px"></th>
 
-<button nz-button  nzType="primary"   nzValue="large">Add</button>
-<nz-table #nzTable [nzData]="posts" nzTableLayout="fixed">
-    <thead>
+      <th>Actions</th>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Statut</th>
+      <th>Titre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let data of nzTable.data">
       <tr>
-        <th nzWidth="60px"></th>
-     
-        <th>Actions</th>
-        <th>Id</th>
-        <th>Nom</th>
-        <th>Statut</th>
-        <th>Titre</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let data of nzTable.data">
-         <tr>     
-          <td [nzExpand]="expandSet.has(data.id)" (nzExpandChange)="onExpandChange(data.id, $event)"></td>
+        <td
+          [nzExpand]="expandSet.has(data.id)"
+          (nzExpandChange)="onExpandChange(data.id, $event)"
+        ></td>
         <!--  <td>
             
           <a  type="button" (click)="showModal()"><i nz-icon nzType="edit" [nzTheme]="'twotone'"  [nzTwotoneColor]="'#FFD65E'" nzTheme="outline"></i></a> 
@@ -28,107 +37,273 @@
              
         </td> -->
         <td>
-         
-          <a  type="button"  (click)="showModallivre()"><i nzTooltipTitle="Livraison" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-check-square"></i></a> 
-          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Reporter" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-calendar-alt"></i></a> 
-          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Revenir" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-undo-alt"></i></a> 
-          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Pas de Reponse" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-phone-slash"></i></a> 
-          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Hors de portée" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-map-marked-alt"></i></a> 
-          <a style="padding-left: 1px;" type="button" (click)="showModal()"><i nzTooltipTitle="Refuser" nzTooltipPlacement="top" nz-button nz-tooltip class="fas fa-times"></i></a> 
-    
-        
+          <a type="button" (click)="showModallivre()"
+            ><i
+              nzTooltipTitle="Livraison"
+              nzTooltipPlacement="top"
+              nz-button
+              nz-tooltip
+              class="fas fa-check-square"
+            ></i
+          ></a>
+          <a style="padding-left: 1px" type="button" (click)="showModal()"
+            ><i
+              nzTooltipTitle="Reporter"
+              nzTooltipPlacement="top"
+              nz-button
+              nz-tooltip
+              class="fas fa-calendar-alt"
+            ></i
+          ></a>
+          <a style="padding-left: 1px" type="button" (click)="showModal()"
+            ><i
+              nzTooltipTitle="Revenir"
+              nzTooltipPlacement="top"
+              nz-button
+              nz-tooltip
+              class="fas fa-undo-alt"
+            ></i
+          ></a>
+          <a style="padding-left: 1px" type="button" (click)="showModal()"
+            ><i
+              nzTooltipTitle="Pas de Reponse"
+              nzTooltipPlacement="top"
+              nz-button
+              nz-tooltip
+              class="fas fa-phone-slash"
+            ></i
+          ></a>
+          <a style="padding-left: 1px" type="button" (click)="showModal()"
+            ><i
+              nzTooltipTitle="Hors de portée"
+              nzTooltipPlacement="top"
+              nz-button
+              nz-tooltip
+              class="fas fa-map-marked-alt"
+            ></i
+          ></a>
+          <a style="padding-left: 1px" type="button" (click)="showModal()"
+            ><i
+              nzTooltipTitle="Refuser"
+              nzTooltipPlacement="top"
+              nz-button
+              nz-tooltip
+              class="fas fa-times"
+            ></i
+          ></a>
         </td>
-          <td>{{ data.id }}</td>
-          <td  >{{ data.name }}</td>
-          <td><span class="badge badge-success">Livré</span></td>
-          <td>{{ data.email }}</td>
-        </tr>
-        <tr [nzExpand]="expandSet.has(data.id)">
-          <span>{{ data.body }}</span>
-<ul data-dtr-index="0" class="dtr-details"><li data-dtr-index="8" data-dt-row="0" data-dt-column="8"><span class="dtr-title">Ville client</span> <span class="dtr-data">Fes</span></li><li data-dtr-index="9" data-dt-row="0" data-dt-column="9"><span class="dtr-title">Nom du produit</span> <span class="dtr-data">ganziza</span></li><li data-dtr-index="10" data-dt-row="0" data-dt-column="10"><span class="dtr-title">Prix total</span> <span class="dtr-data">349 MAD</span></li><li data-dtr-index="11" data-dt-row="0" data-dt-column="11"><span class="dtr-title">Quantité</span> <span class="dtr-data">1</span></li><li data-dtr-index="12" data-dt-row="0" data-dt-column="12"><span class="dtr-title">Adresse du client</span> <span class="dtr-data">132 lot bennis av ibn atir fes</span></li><li data-dtr-index="16" data-dt-row="0" data-dt-column="16"><span class="dtr-title">Email</span> <span class="dtr-data">_</span></li><li data-dtr-index="18" data-dt-row="0" data-dt-column="18"><span class="dtr-title">Livreur note</span> <span class="dtr-data">_</span></li><li data-dtr-index="19" data-dt-row="0" data-dt-column="19"><span class="dtr-title">Frais de livraison</span> <span class="dtr-data">20 MAD</span></li><li data-dtr-index="21" data-dt-row="0" data-dt-column="21"><span class="dtr-title">Responsable</span> <span class="dtr-data"><a data-toggle="tooltip" title="" href="tel:0662656745" data-original-title="Mr. Admin">0662656745</a></span></li><li data-dtr-index="22" data-dt-row="0" data-dt-column="22"><span class="dtr-title">Date d'action</span> <span class="dtr-data">01/15/2021 23:13:06</span></li><li data-dtr-index="23" data-dt-row="0" data-dt-column="23"><span class="dtr-title">Date reportée</span> <span class="dtr-data">_</span></li><li data-dtr-index="25" data-dt-row="0" data-dt-column="25"><span class="dtr-title">Remarques</span> <span class="dtr-data">_</span></li><li data-dtr-index="27" data-dt-row="0" data-dt-column="27"><span class="dtr-title">Code de suivi</span> <span class="dtr-data"><a href="_" target="_blank">_</a></span></li><li data-dtr-index="28" data-dt-row="0" data-dt-column="28"><span class="dtr-title">Date de création</span> <span class="dtr-data">01/13/2021 16:47:27</span></li><li data-dtr-index="29" data-dt-row="0" data-dt-column="29"><span class="dtr-title">Date mise à jour</span> <span class="dtr-data">01/15/2021 23:13:06</span></li></ul>
-        </tr>
-      </ng-container>
-    </tbody>
-  </nz-table>
-  
-  <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-    <ng-container *nzModalContent>
-      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
-        <nz-form-item>
-          <nz-form-label [nzSpan]="7" nzRequired>Username</nz-form-label>
-          <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
-            <input nz-input formControlName="userName" placeholder="async validate try to write JasonWood" />
-            <ng-template #userErrorTpl let-control>
-              <ng-container *ngIf="control.hasError('required')">
-                Please input your username!
-              </ng-container>
-              <ng-container *ngIf="control.hasError('duplicated')">
-                The username is redundant!
-              </ng-container>
-            </ng-template>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
-          <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
-            <input nz-input formControlName="email" placeholder="email" type="email" />
-            <ng-template #emailErrorTpl let-control>
-              <ng-container *ngIf="control.hasError('email')">
-                The input is not valid E-mail!
-              </ng-container>
-              <ng-container *ngIf="control.hasError('required')">
-                Please input your E-mail!
-              </ng-container>
-            </ng-template>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
-          <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="Please input your password!">
-            <input nz-input type="password" formControlName="password" (ngModelChange)="validateConfirmPassword()" />
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSpan]="7" nzRequired>Confirm Password</nz-form-label>
-          <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="passwordErrorTpl">
-            <input nz-input type="password" formControlName="confirm" placeholder="confirm your password" />
-            <ng-template #passwordErrorTpl let-control>
-              <ng-container *ngIf="control.hasError('required')">
-                Please confirm your password!
-              </ng-container>
-              <ng-container *ngIf="control.hasError('confirm')">
-                Password is inconsistent!
-              </ng-container>
-            </ng-template>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSpan]="7" nzRequired>Comment</nz-form-label>
-          <nz-form-control [nzSpan]="12" nzErrorTip="Please write something here!">
-            <textarea formControlName="comment" nz-input rows="2" placeholder="write any thing"></textarea>
-          </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-control [nzOffset]="7" [nzSpan]="12">
-            <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
-            <button nz-button (click)="resetForm($event)">Reset</button>
-          </nz-form-control>
-        </nz-form-item>
-      </form>
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td><span class="badge badge-success">Livré</span></td>
+        <td>{{ data.email }}</td>
+      </tr>
+      <tr [nzExpand]="expandSet.has(data.id)">
+        <span>{{ data.body }}</span>
+        <ul data-dtr-index="0" class="dtr-details">
+          <li data-dtr-index="8" data-dt-row="0" data-dt-column="8">
+            <span class="dtr-title">Ville client</span>
+            <span class="dtr-data">Fes</span>
+          </li>
+          <li data-dtr-index="9" data-dt-row="0" data-dt-column="9">
+            <span class="dtr-title">Nom du produit</span>
+            <span class="dtr-data">ganziza</span>
+          </li>
+          <li data-dtr-index="10" data-dt-row="0" data-dt-column="10">
+            <span class="dtr-title">Prix total</span>
+            <span class="dtr-data">349 MAD</span>
+          </li>
+          <li data-dtr-index="11" data-dt-row="0" data-dt-column="11">
+            <span class="dtr-title">Quantité</span>
+            <span class="dtr-data">1</span>
+          </li>
+          <li data-dtr-index="12" data-dt-row="0" data-dt-column="12">
+            <span class="dtr-title">Adresse du client</span>
+            <span class="dtr-data">132 lot bennis av ibn atir fes</span>
+          </li>
+          <li data-dtr-index="16" data-dt-row="0" data-dt-column="16">
+            <span class="dtr-title">Email</span> <span class="dtr-data">_</span>
+          </li>
+          <li data-dtr-index="18" data-dt-row="0" data-dt-column="18">
+            <span class="dtr-title">Livreur note</span>
+            <span class="dtr-data">_</span>
+          </li>
+          <li data-dtr-index="19" data-dt-row="0" data-dt-column="19">
+            <span class="dtr-title">Frais de livraison</span>
+            <span class="dtr-data">20 MAD</span>
+          </li>
+          <li data-dtr-index="21" data-dt-row="0" data-dt-column="21">
+            <span class="dtr-title">Responsable</span>
+            <span class="dtr-data"
+              ><a
+                data-toggle="tooltip"
+                title=""
+                href="tel:0662656745"
+                data-original-title="Mr. Admin"
+                >0662656745</a
+              ></span
+            >
+          </li>
+          <li data-dtr-index="22" data-dt-row="0" data-dt-column="22">
+            <span class="dtr-title">Date d'action</span>
+            <span class="dtr-data">01/15/2021 23:13:06</span>
+          </li>
+          <li data-dtr-index="23" data-dt-row="0" data-dt-column="23">
+            <span class="dtr-title">Date reportée</span>
+            <span class="dtr-data">_</span>
+          </li>
+          <li data-dtr-index="25" data-dt-row="0" data-dt-column="25">
+            <span class="dtr-title">Remarques</span>
+            <span class="dtr-data">_</span>
+          </li>
+          <li data-dtr-index="27" data-dt-row="0" data-dt-column="27">
+            <span class="dtr-title">Code de suivi</span>
+            <span class="dtr-data"><a href="_" target="_blank">_</a></span>
+          </li>
+          <li data-dtr-index="28" data-dt-row="0" data-dt-column="28">
+            <span class="dtr-title">Date de création</span>
+            <span class="dtr-data">01/13/2021 16:47:27</span>
+          </li>
+          <li data-dtr-index="29" data-dt-row="0" data-dt-column="29">
+            <span class="dtr-title">Date mise à jour</span>
+            <span class="dtr-data">01/15/2021 23:13:06</span>
+          </li>
+        </ul>
+      </tr>
     </ng-container>
-  </nz-modal> 
+  </tbody>
+</nz-table>
 
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="The first Modal"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+>
+  <ng-container *nzModalContent>
+    <form
+      nz-form
+      [formGroup]="validateForm"
+      (ngSubmit)="submitForm(validateForm.value)"
+    >
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Username</nz-form-label>
+        <nz-form-control
+          [nzSpan]="12"
+          nzHasFeedback
+          nzValidatingTip="Validating..."
+          [nzErrorTip]="userErrorTpl"
+        >
+          <input
+            nz-input
+            formControlName="userName"
+            placeholder="async validate try to write JasonWood"
+          />
+          <ng-template #userErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">
+              Please input your username!
+            </ng-container>
+            <ng-container *ngIf="control.hasError('duplicated')">
+              The username is redundant!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+        <nz-form-control
+          [nzSpan]="12"
+          nzHasFeedback
+          [nzErrorTip]="emailErrorTpl"
+        >
+          <input
+            nz-input
+            formControlName="email"
+            placeholder="email"
+            type="email"
+          />
+          <ng-template #emailErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('email')">
+              The input is not valid E-mail!
+            </ng-container>
+            <ng-container *ngIf="control.hasError('required')">
+              Please input your E-mail!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
+        <nz-form-control
+          [nzSpan]="12"
+          nzHasFeedback
+          nzErrorTip="Please input your password!"
+        >
+          <input
+            nz-input
+            type="password"
+            formControlName="password"
+            (ngModelChange)="validateConfirmPassword()"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Confirm Password</nz-form-label>
+        <nz-form-control
+          [nzSpan]="12"
+          nzHasFeedback
+          [nzErrorTip]="passwordErrorTpl"
+        >
+          <input
+            nz-input
+            type="password"
+            formControlName="confirm"
+            placeholder="confirm your password"
+          />
+          <ng-template #passwordErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">
+              Please confirm your password!
+            </ng-container>
+            <ng-container *ngIf="control.hasError('confirm')">
+              Password is inconsistent!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Comment</nz-form-label>
+        <nz-form-control
+          [nzSpan]="12"
+          nzErrorTip="Please write something here!"
+        >
+          <textarea
+            formControlName="comment"
+            nz-input
+            rows="2"
+            placeholder="write any thing"
+          ></textarea>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzOffset]="7" [nzSpan]="12">
+          <button nz-button nzType="primary" [disabled]="!validateForm.valid">
+            Submit
+          </button>
+          <button nz-button (click)="resetForm($event)">Reset</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>
 
-  <nz-modal [(nzVisible)]="isVisiblelivre" nzTitle="Livré Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-    <ng-container *nzModalContent>
-      <form nz-form [formGroup]="livre" (ngSubmit)="submitForm(livreForm.value)">
-      
-        <input type="date" name="date" class="form-control" id="">
-        
-      </form>
-    </ng-container>
-  </nz-modal> 
-
-
-
-
+<nz-modal
+  [(nzVisible)]="isVisiblelivre"
+  nzTitle="Livré Modal"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+>
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="livre" (ngSubmit)="submitForm(livreForm.value)">
+      <input type="date" name="date" class="form-control" id="" />
+    </form>
+  </ng-container>
+</nz-modal>
