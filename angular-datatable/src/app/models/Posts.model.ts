@@ -5,7 +5,7 @@ export interface PostModel {
     email: string;
     body: string;
     expand: boolean;
-
+nom:string;
 
 
 
