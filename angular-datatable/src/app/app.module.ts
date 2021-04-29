@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, registerLocaleData } from '@angular/common';
-import { FormModalComponent } from './components/Froms/form-modal/form-modal.component';
+
 import { ReactiveFormComponent } from './components/Froms/reactive-form/reactive-form.component';
 import { StoreModule } from '@ngrx/store';
 // import { counterReducer, PostesReducer } from './components/store/store';
@@ -54,7 +54,6 @@ registerLocaleData(fr);
     ReactiveFormComponent,
     WizzardComponent,
     DatatableComponent,
-    FormModalComponent,
     AddpostComponent,
     UpdatepostComponent
 
