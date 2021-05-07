@@ -1,3 +1,4 @@
+import { WelcomeModule } from './pages/welcome/welcome.module';
 
 import { PostsService } from './services/posts.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -88,7 +89,8 @@ registerLocaleData(fr);
     NzFormModule,
     NzBadgeModule,
     NzTypographyModule,
-    NzToolTipModule
+    NzToolTipModule,
+    WelcomeModule
 
 
 
